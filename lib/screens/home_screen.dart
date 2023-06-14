@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/filter_widget.dart';
 import '../widgets/market_widget.dart';
 import '../widgets/profile_widget.dart';
 
@@ -39,7 +40,10 @@ class _HomeScreenState extends State<HomeScreen> {
           IconButton(
             icon: const Icon(Icons.filter_list),
             onPressed: () {
-              // Filter
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => FilterPage()),
+              );
             },
           ),
         ],
