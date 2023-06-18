@@ -1,4 +1,4 @@
-# **Takım İsmi**
+# **F-82**
 
 Flutter Takım 82
 
@@ -16,7 +16,7 @@ Flutter Takım 82
 --Pazar Rotası--
 
 ## Product Backlog
-Flutter Team 82 Miro Backlog Board (https://miro.com/app/board/uXjVM9styvM=/)
+[Flutter Team 82 Miro Backlog Board](https://miro.com/app/board/uXjVM9styvM=/)
 ## Ürün Açıklaması
 
 Pazar Rotası, şehre yeni taşınan insanların, turistlerin ve organik ürün arayışında olan tüketicilerin en uğrak noktası olan pazarların bilgilerini en hızlı ve doğru şekilde kullanıcısına ulaştırmayı hedefleyen bir uygulama. Tüketicilerin yanı sıra üreticilerin de kolay bir şekilde bölgesindeki pazar yerlerini belirleyebilmesine olanak sağlayan Pazar Rotası ürünlerin tüketiciyle buluşmasını daha sistemli ve konforlu bir hale getiriyor. 
@@ -39,12 +39,12 @@ Henüz ürün özellikleri geliştirme aşamasında...
 
 **Puan tamamlama mantığı**: Toplamda proje boyunca tamamlanması gereken 300 puanlık backlog bulunmaktadır. İlk haftanın daha çok tanışma toplantıları ve proje fikrinin bulunması için yapılan çalışmalarla geçtiği için bu haftanın sprintinin 60 puan olmasına karar verildi.
 
-**Daily Scrum**: Daily Scrum toplantıları grup üyelerinin müsaitlik durumu nedeniyle discord üzerinden açılan bir kanal üzerinden ilerletilmiştir.
+**Daily Scrum**: Daily Scrum toplantıları grup üyelerinin müsaitlik durumu nedeniyle discord üzerinden açılan bir kanal üzerinden ilerletilmiştir. ![Daily Scrum] 
 
-- **Sprint board update**:backlog1.jpg
-- **Ürün Durumu**:Ekran Görüntüleri:
-  ![Screenshot 1] (https://github.com/nurglnal/Bazaar-App-Project/blob/main/PazarRotas%C4%B1-screenshot-1.png)
-  ![Screenshot 2] (https://github.com/nurglnal/Bazaar-App-Project/blob/main/PazarRotas%C4%B1-screenshot-2.png)
+**Sprint board update**:![backlog](https://github.com/nurglnal/Bazaar-App-Project/blob/main/backlog1.jpg)
+**Ürün Durumu**:Ekran Görüntüleri:
+  ![Screenshot 1](https://github.com/nurglnal/Bazaar-App-Project/blob/main/PazarRotas%C4%B1-screenshot-1.png)
+  ![Screenshot 2](https://github.com/nurglnal/Bazaar-App-Project/blob/main/PazarRotas%C4%B1-screenshot-2.png)
 
 - **Sprint Review**: Ürünün splash gifi ve anasayfa dizaynları takım tarafından ortak olarak beğenildi. Eksik olan verilerle ilgili değerlendirmeler yapıldı. Geliştirilmeye başlanan anasayfa için değerlendirmeler yapıldı.
 - **Sprint Retrospective:** Bu haftaki performansımızın takım üyelerinin meşguliyetine rağmen verimli bir şekilde geçirildiğine ve bir sonraki sprintte daha aktif bir şekilde görev alınmasına karar verildi.
