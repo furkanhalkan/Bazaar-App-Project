@@ -22,6 +22,8 @@ Pazar Rotası, şehre yeni taşınan insanların, turistlerin ve organik ürün 
 
 ## Ürün Özellikleri
 
+Henüz ürün özellikleri geliştirme aşamasında...
+
 ## Hedef Kitle
 
 - Doğal ve Organik Ürün Arayışında Olan Tüketiciler
@@ -40,10 +42,10 @@ Pazar Rotası, şehre yeni taşınan insanların, turistlerin ve organik ürün 
 
 **Sprint board update**:
 **Ürün Durumu**:Ekran Görüntüleri
-![Screenshot 1] (https://github.com/OyunveUygulamaAkademisi/Bootcamp2022Example/blob/main/ProjectManagement/Sprint1Documents/product1.png) 
+ 
 
-**Sprint Review**:
-**Sprint Retrospective:**
+**Sprint Review**: Ürünün splash gifi ve anasayfa dizaynları takım tarafından ortak olarak beğenildi. Eksik olan verilerle ilgili değerlendirmeler yapıldı. Geliştirilmeye başlanan anasayfa için değerlendirmeler yapıldı.
+**Sprint Retrospective:** Bu haftaki performansımızın takım üyelerinin meşguliyetine rağmen verimli bir şekilde geçirildiğine ve bir sonraki sprintte daha aktif bir şekilde görev alınmasına karar verildi.
 
 
 # Sprint 2
