@@ -42,8 +42,9 @@ Henüz ürün özellikleri geliştirme aşamasında...
 **Daily Scrum**: Daily Scrum toplantıları grup üyelerinin müsaitlik durumu nedeniyle discord üzerinden açılan bir kanal üzerinden ilerletilmiştir.
 
 - **Sprint board update**:backlog1.jpg
-- **Ürün Durumu**:Ekran Görüntüleri
- 
+- **Ürün Durumu**:Ekran Görüntüleri:
+  ![Screenshot 1] (https://github.com/nurglnal/Bazaar-App-Project/blob/main/PazarRotas%C4%B1-screenshot-1.png)
+  ![Screenshot 2] (https://github.com/nurglnal/Bazaar-App-Project/blob/main/PazarRotas%C4%B1-screenshot-2.png)
 
 - **Sprint Review**: Ürünün splash gifi ve anasayfa dizaynları takım tarafından ortak olarak beğenildi. Eksik olan verilerle ilgili değerlendirmeler yapıldı. Geliştirilmeye başlanan anasayfa için değerlendirmeler yapıldı.
 - **Sprint Retrospective:** Bu haftaki performansımızın takım üyelerinin meşguliyetine rağmen verimli bir şekilde geçirildiğine ve bir sonraki sprintte daha aktif bir şekilde görev alınmasına karar verildi.
