@@ -35,14 +35,19 @@ Henüz ürün özellikleri geliştirme aşamasında...
   
 
 # Sprint 1
-**Sprint içinde tamamlanması tahmin edilen puan**: 60
+- **Sprint içinde tamamlanması tahmin edilen puan**: 60
 
-**Puan tamamlama mantığı**: Toplamda proje boyunca tamamlanması gereken 300 puanlık backlog bulunmaktadır. İlk haftanın daha çok tanışma toplantıları ve proje fikrinin bulunması için yapılan çalışmalarla geçtiği için bu haftanın sprintinin 60 puan olmasına karar verildi.
+- **Puan tamamlama mantığı**: Toplamda proje boyunca tamamlanması gereken 300 puanlık backlog bulunmaktadır. İlk haftanın daha çok tanışma toplantıları ve proje fikrinin bulunması için yapılan çalışmalarla geçtiği için bu haftanın sprintinin 60 puan olmasına karar verildi.
 
-**Daily Scrum**: Daily Scrum toplantıları grup üyelerinin müsaitlik durumu nedeniyle discord üzerinden açılan bir kanal üzerinden ilerletilmiştir. ![Daily Scrum] 
+- **Daily Scrum**: Daily Scrum toplantıları grup üyelerinin müsaitlik durumu nedeniyle discord üzerinden açılan bir kanal üzerinden ilerletilmiştir. 
+[Daily Scrum](https://github.com/nurglnal/Bazaar-App-Project/blob/main/daily-scrum-1.jpg)
+[Daily Scrum 2](https://github.com/nurglnal/Bazaar-App-Project/blob/main/daily-scrum-2.jpg)
 
-**Sprint board update**:![backlog](https://github.com/nurglnal/Bazaar-App-Project/blob/main/backlog1.jpg)
-**Ürün Durumu**:Ekran Görüntüleri:
+
+- **Sprint board update**:
+![Sprint backlog](https://github.com/nurglnal/Bazaar-App-Project/blob/main/backlog1.jpg)
+
+- **Ürün Durumu**:Ekran Görüntüleri:
   ![Screenshot 1](https://github.com/nurglnal/Bazaar-App-Project/blob/main/PazarRotas%C4%B1-screenshot-1.png)
   ![Screenshot 2](https://github.com/nurglnal/Bazaar-App-Project/blob/main/PazarRotas%C4%B1-screenshot-2.png)
 
