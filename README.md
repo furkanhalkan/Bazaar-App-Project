@@ -40,12 +40,12 @@ Henüz ürün özellikleri geliştirme aşamasında...
 
 **Daily Scrum**: Daily Scrum toplantıları grup üyelerinin müsaitlik durumu nedeniyle discord üzerinden açılan bir kanal üzerinden ilerletilmiştir.
 
-**Sprint board update**:
-**Ürün Durumu**:Ekran Görüntüleri
+- **Sprint board update**:
+- **Ürün Durumu**:Ekran Görüntüleri
  
 
-**Sprint Review**: Ürünün splash gifi ve anasayfa dizaynları takım tarafından ortak olarak beğenildi. Eksik olan verilerle ilgili değerlendirmeler yapıldı. Geliştirilmeye başlanan anasayfa için değerlendirmeler yapıldı.
-**Sprint Retrospective:** Bu haftaki performansımızın takım üyelerinin meşguliyetine rağmen verimli bir şekilde geçirildiğine ve bir sonraki sprintte daha aktif bir şekilde görev alınmasına karar verildi.
+- **Sprint Review**: Ürünün splash gifi ve anasayfa dizaynları takım tarafından ortak olarak beğenildi. Eksik olan verilerle ilgili değerlendirmeler yapıldı. Geliştirilmeye başlanan anasayfa için değerlendirmeler yapıldı.
+- **Sprint Retrospective:** Bu haftaki performansımızın takım üyelerinin meşguliyetine rağmen verimli bir şekilde geçirildiğine ve bir sonraki sprintte daha aktif bir şekilde görev alınmasına karar verildi.
 
 
 # Sprint 2
