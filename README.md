@@ -16,6 +16,7 @@ Flutter Takım 82
 --Pazar Rotası--
 
 ## Product Backlog
+Flutter Team 82 Miro Backlog Board (https://miro.com/app/board/uXjVM9styvM=/)
 ## Ürün Açıklaması
 
 Pazar Rotası, şehre yeni taşınan insanların, turistlerin ve organik ürün arayışında olan tüketicilerin en uğrak noktası olan pazarların bilgilerini en hızlı ve doğru şekilde kullanıcısına ulaştırmayı hedefleyen bir uygulama. Tüketicilerin yanı sıra üreticilerin de kolay bir şekilde bölgesindeki pazar yerlerini belirleyebilmesine olanak sağlayan Pazar Rotası ürünlerin tüketiciyle buluşmasını daha sistemli ve konforlu bir hale getiriyor. 
@@ -40,7 +41,7 @@ Henüz ürün özellikleri geliştirme aşamasında...
 
 **Daily Scrum**: Daily Scrum toplantıları grup üyelerinin müsaitlik durumu nedeniyle discord üzerinden açılan bir kanal üzerinden ilerletilmiştir.
 
-- **Sprint board update**:
+- **Sprint board update**:backlog1.jpg
 - **Ürün Durumu**:Ekran Görüntüleri
  
 
