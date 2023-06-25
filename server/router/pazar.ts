@@ -127,6 +127,45 @@ pazar.post('/arama', async (req, res) => {
     }
 });
 
+
+pazar.get('/iller', async (req, res) => {
+    try {
+        const iller = await prisma.iller.findMany({
+          select: {
+            il_adi: true,
+          },
+        });
+        res.json(iller.map((il) => il.il_adi));
+      } 
+      catch (error) 
+      {
+        console.error('Hata:', error);
+        res.status(500).json({ error: 'Bir hata oluştu' });
+      }
+});
+
+pazar.get('/ilceler/:ilAdi', async (req, res) => {
+  try {
+    const { ilAdi } = req.params;
+
+    const ilceler = await prisma.ilceler.findMany({
+      where: {
+        il_adi: ilAdi,
+      },
+      select: {
+        ilce_adi: true,
+      },
+    });
+
+    res.json(ilceler.map((ilce) => ilce.ilce_adi));
+  } 
+  catch (error) 
+  {
+    console.error('Hata:', error);
+    res.status(500).json({ error: 'Bir hata oluştu' });
+  }
+});
+
 async function getLatLng(address: string): Promise<{latitude: string, longitude: string} | null> {
     try {
       const response = await axios.get(
