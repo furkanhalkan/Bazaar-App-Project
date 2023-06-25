@@ -32,12 +32,6 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text(widget.title),
         actions: <Widget>[
           IconButton(
-            icon: const Icon(Icons.search),
-            onPressed: () {
-              // Search
-            },
-          ),
-          IconButton(
             icon: const Icon(Icons.filter_list),
             onPressed: () {
               Navigator.push(
