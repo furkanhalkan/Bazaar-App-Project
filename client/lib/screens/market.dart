@@ -5,6 +5,8 @@ class Market {
   final String gunler;
   final String il;
   final String ilce;
+  final String latitude;
+  final String longitude;
 
   Market({
     required this.id,
@@ -13,6 +15,8 @@ class Market {
     required this.gunler,
     required this.il,
     required this.ilce,
+    required this.latitude,
+    required this.longitude,
   });
 
   factory Market.fromJson(Map<String, dynamic> json) {
@@ -23,6 +27,8 @@ class Market {
       gunler: json['Gunler'],
       il: json['il'],
       ilce: json['ilce'],
+      latitude: json['latitude'],
+      longitude: json['longitude'],
     );
   }
 }

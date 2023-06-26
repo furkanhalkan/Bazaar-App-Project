@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../widgets/filter_widget.dart';
 import '../widgets/market_widget.dart';
 import '../widgets/profile_widget.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key, required this.title}) : super(key: key);
@@ -19,7 +20,19 @@ class _HomeScreenState extends State<HomeScreen> {
     ProfileWidget(),
   ];
 
-  void _onItemTapped(int index) {
+  void _onItemTapped(int index) async {
+    if (index == 1) {
+      // Kullanıcının giriş yapıp yapmadığını kontrol et
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      String? token = prefs.getString('token');
+
+      if (token == null) {
+        // Eğer kullanıcı giriş yapmamışsa, Giriş sayfasına yönlendir
+        Navigator.pushReplacementNamed(context, '/login');
+        return;
+      }
+    }
+
     setState(() {
       _selectedIndex = index;
     });
@@ -31,12 +44,6 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text(widget.title),
         actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.search),
-            onPressed: () {
-              // Search
-            },
-          ),
           IconButton(
             icon: const Icon(Icons.filter_list),
             onPressed: () {

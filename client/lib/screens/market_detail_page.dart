@@ -6,7 +6,7 @@ import 'market.dart';
 class MarketDetailPage extends StatefulWidget {
   final Market market;
 
-  MarketDetailPage(this.market);
+  MarketDetailPage({required this.market});
 
   @override
   _MarketDetailPageState createState() => _MarketDetailPageState();
@@ -14,11 +14,19 @@ class MarketDetailPage extends StatefulWidget {
 
 class _MarketDetailPageState extends State<MarketDetailPage> {
   late GoogleMapController _mapController;
+  Set<Marker> _markers = {};
 
-  final CameraPosition _initialCameraPosition = CameraPosition(
-    target: LatLng(41.38879, 33.78227),
-    zoom: 14.0,
-  );
+  @override
+  void initState() {
+    super.initState();
+    _markers.add(
+      Marker(
+        markerId: MarkerId('marketLocation'),
+        position: LatLng(double.parse(widget.market.latitude),
+            double.parse(widget.market.longitude)),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,12 +55,17 @@ class _MarketDetailPageState extends State<MarketDetailPage> {
           SizedBox(height: 32.0),
           Expanded(
             child: GoogleMap(
-              initialCameraPosition: _initialCameraPosition,
+              initialCameraPosition: CameraPosition(
+                target: LatLng(double.parse(widget.market.latitude),
+                    double.parse(widget.market.longitude)),
+                zoom: 14.0,
+              ),
               onMapCreated: (GoogleMapController controller) {
                 setState(() {
                   _mapController = controller;
                 });
               },
+              markers: _markers,
             ),
           ),
         ],
