@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 import '../widgets/RegisterPage.dart';
 
@@ -21,18 +23,33 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Future<void> _login() async {
-    // Eğer form validasyonu geçerse, giriş işlemi yapılır.
     if (_formKey.currentState!.validate()) {
-      // Burada gerçek giriş işlemi yapılır.
-      // Kullanıcı adı ve şifre ile bir API'ye istek yapılır.
-      // İstek başarılı olursa, token alınır ve SharedPreferences'a kaydedilir.
+      final response = await http.post(
+        Uri.parse(
+            'http://192.168.56.1:3000/api/auth/login'), // your-api-url kısmını kendi Express API urliniz ile değiştirin.
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(<String, String>{
+          'mail': _usernameController.text,
+          'password': _passwordController.text,
+        }),
+      );
 
-      // Şimdilik sadece bir örnek token kaydedeceğiz.
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      await prefs.setString('token', 'example_token');
+      if (response.statusCode == 200) {
+        // If the server returns a 200 OK response,
+        // then parse the JSON and store the token.
+        Map<String, dynamic> jsonResponse = jsonDecode(response.body);
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        await prefs.setString('token', jsonResponse['token']);
+        await prefs.setString('user_id', jsonResponse['user_id']);
 
-      // Sonrasında kullanıcı ana sayfaya yönlendirilir.
-      Navigator.pushReplacementNamed(context, '/home');
+        Navigator.pushReplacementNamed(context, '/home');
+      } else {
+        // If the server returns an error response,
+        // then throw an exception.
+        throw Exception('Failed to login');
+      }
     }
   }
 

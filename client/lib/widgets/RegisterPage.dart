@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -19,6 +21,36 @@ class _RegisterPageState extends State<RegisterPage> {
     _phoneController.dispose();
     _nameSurnameController.dispose();
     super.dispose();
+  }
+
+  Future<void> _register() async {
+    if (_formKey.currentState!.validate()) {
+      final response = await http.post(
+        Uri.parse(
+            'http://192.168.56.1:3000/api/auth/register'), // your-api-url kısmını kendi Express API urliniz ile değiştirin.
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(<String, String>{
+          'user_id': '', // Burayı uygulamanıza göre ayarlamalısınız
+          'mail': _emailController.text,
+          'password': _passwordController.text,
+          'phone': _phoneController.text,
+          'name_surname': _nameSurnameController.text,
+        }),
+      );
+
+      if (response.statusCode == 201) {
+        // If the server returns a 201 Created response,
+        // then parse the JSON.
+        // You can navigate the user to login page or directly log them in and navigate to home.
+        Navigator.pushReplacementNamed(context, '/login'); // or '/home'
+      } else {
+        // If the server returns an error response,
+        // then throw an exception.
+        throw Exception('Failed to register');
+      }
+    }
   }
 
   @override
@@ -85,12 +117,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 ElevatedButton(
                   child: Text('Kayıt Ol'),
-                  onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      // Kayıt işlemi kodları burada olacak.
-                      // Formdan alınan veriler _userIdController, _emailController, _passwordController, _phoneController, _nameSurnameController kullanılarak alınabilir.
-                    }
-                  },
+                  onPressed: _register,
                 ),
               ],
             ),
