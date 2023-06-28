@@ -3,6 +3,7 @@ import { Router } from "express";
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import authenticateToken from '../middleware/auth';
+import { randomUUID } from "crypto";
 
 const prisma = new PrismaClient()
 
@@ -12,8 +13,9 @@ const SECRET = process.env.SECRET_KEY || "12345678";
 
 // Kayıt işlemi
 auth.post('/register', async (req, res) => {
-    const { user_id, mail, password, phone, name_surname } = req.body;
+    const {mail, password, phone, name_surname } = req.body;
 
+    const user_id=randomUUID();
   try 
   {
     
@@ -65,10 +67,5 @@ auth.post('/login', async (req, res) => {
 
     const token = jwt.sign({ id: user.id, username: user.mail }, SECRET, { expiresIn: '4h' });
 
-    res.json({ token });
-});
-
-// Yetkilendirme
-auth.get('/secret', authenticateToken, async (req, res) => {
-    res.json({ message: 'Secret message' });
+    res.json({ token:token,user_id:user.user_id });
 });

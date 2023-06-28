@@ -12,6 +12,7 @@ const router = express.Router();
 
 import {auth} from './router/auth';
 import {pazar} from './router/pazar';
+import {profil} from './router/profil';
 
 app.use(cors());
 app.use(express.json());
@@ -47,6 +48,7 @@ app.get('/', async (req, res) => {
 
 app.use("/api/auth",auth);
 app.use("/api/pazar",pazar);
+app.use("/api/profil",profil);
 
 const server = app.listen(3000, () =>
   console.log(`🚀 Server ready at: http://localhost:3000`),

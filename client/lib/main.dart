@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
       ),
       home: SplashScreen(),
       routes: {
-        "/home": (context) => HomeScreen(title: 'deneme'),
+        "/home": (context) => HomeScreen(title: 'Pazar Rotasi'),
         '/login': (context) => LoginPage()
       },
     );
