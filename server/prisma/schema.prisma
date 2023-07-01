@@ -11,42 +11,55 @@ datasource db {
 }
 
 model pazars {
-  id Int @id @default(autoincrement())
-  pazar_id String @unique
-  pazar_adi String
-  pazar_turu String
-  adres String
-  il String
-  ilce String
-  Gunler String
-  Description       String?   @db.Text
-  latitude String?
-  longitude String?
-  createdAt   DateTime     @default(now())
-  updatedAt   DateTime     @updatedAt
+  id          Int      @id @default(autoincrement())
+  pazar_id    String   @unique
+  pazar_adi   String
+  pazar_turu  String
+  adres       String
+  il          String
+  ilce        String
+  Gunler      String
+  Description String?  @db.Text
+  latitude    String?
+  longitude   String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 model users {
-  id Int @id @default(autoincrement())
-  user_id String @unique
-  mail String @unique
-  password String
-  phone String
-  name_surname String
-  mail_verification Boolean @default(false)
-  phone_verification Boolean @default(false)
-  createdAt   DateTime     @default(now())
-  updatedAt   DateTime     @updatedAt
+  id                 Int        @id @default(autoincrement())
+  user_id            String     @unique
+  mail               String     @unique
+  password           String
+  phone              String
+  name_surname       String
+  mail_verification  Boolean    @default(false)
+  phone_verification Boolean    @default(false)
+  createdAt          DateTime   @default(now())
+  updatedAt          DateTime   @updatedAt
+  yorumlar           yorumlar[]
+}
+
+model yorumlar {
+  id               Int      @id @default(autoincrement())
+  yorum_id         String   @unique
+  pazar_id         String
+  yorum_yapan_kisi String
+  name_surname     String?
+  yorum            String?  @db.Text
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  user             users @relation(fields: [yorum_yapan_kisi], references: [user_id])
 }
 
 model iller {
-  il_id Int @id
+  il_id  Int     @id
   il_adi String?
 }
 
-model ilceler{
-  ilce_id Int @id
+model ilceler {
+  ilce_id  Int    @id
   ilce_adi String
-  il_id Int
-  il_adi String
+  il_id    Int
+  il_adi   String
 }

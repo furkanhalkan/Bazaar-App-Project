@@ -2,6 +2,7 @@ import { Prisma, PrismaClient } from "@prisma/client";
 import { Router } from "express";
 import authenticateToken from '../middleware/auth';
 import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
 
 const prisma = new PrismaClient()
 
@@ -163,6 +164,56 @@ pazar.get('/ilceler/:ilAdi', async (req, res) => {
   {
     console.error('Hata:', error);
     res.status(500).json({ error: 'Bir hata oluştu' });
+  }
+});
+
+pazar.get('/yorumlar/:pazarid', async (req, res) =>{
+  try {
+
+    const {pazarid} = req.params;
+
+    const yorumlars = await prisma.yorumlar.findMany({
+      where: {
+        pazar_id: pazarid
+      },
+      orderBy: {
+        createdAt: 'desc'
+      },
+      include: {
+        user: {
+          select: {
+            name_surname: true
+          }
+        }
+      }
+    });
+
+    res.status(200).json(yorumlars);
+  }
+  catch (error)
+  {
+    console.log('Hata:', error);
+    res.status(500).json({ error: 'Bir hata oluştu' });
+  }
+});
+
+pazar.post('/yorumlar/register', authenticateToken, async (req, res) =>{
+  const { pazar_id, yorum_yapan_kisi, yorum } = req.body;
+  const yorum_id = uuidv4();
+
+  try {
+    const yeniYorum = await prisma.yorumlar.create({
+      data: {
+        yorum_id,
+        pazar_id,
+        yorum_yapan_kisi,
+        yorum
+      }
+    });
+
+    res.status(201).json(yeniYorum);
+  } catch (error) {
+    res.status(400).json({ error: 'Yorum oluşturulurken bir hata oluştu.'+error });
   }
 });
 
