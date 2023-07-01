@@ -56,3 +56,13 @@ Henüz ürün özellikleri geliştirme aşamasında...
 
 
 # Sprint 2
+
+- **Sprint içinde tamamlanması tahmin edilen puan**: 120
+
+- **Daily Scrum**: Ekibin daily scrum etkinlikleri bu sprint özelinde WhatsApp grubu üzerinden yürütülmüştür.
+
+- **Sprint board update**:
+
+- **Sprint Review**: 
+  
+- **Sprint Retrospective:**
