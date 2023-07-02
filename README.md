@@ -60,9 +60,18 @@ Henüz ürün özellikleri geliştirme aşamasında...
 - **Sprint içinde tamamlanması tahmin edilen puan**: 120
 
 - **Daily Scrum**: Ekibin daily scrum etkinlikleri bu sprint özelinde WhatsApp grubu üzerinden yürütülmüştür.
+[Daily Scrum](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/DailyScrum1.1Sprint2.jpg)
+[Daily Scrum 2](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/DailyScrum1.2Sprint2.jpg)
+[Daily Scrum 3](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/DailyScrum1.3Sprint2.jpg)
 
 - **Sprint board update**:
 
-- **Sprint Review**: 
-  
-- **Sprint Retrospective:**
+- **Ürün Durumu**:Ekran Görüntüleri:
+![Screenshot 1](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/PazarRotas%C4%B1_BazaarList.jpeg)
+![Screenshot 2](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/PazarRotas%C4%B1_Filter.jpeg)
+![Screenshot 3](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/PazarRotas%C4%B1_LoginPage.jpeg)
+![Screenshot 4](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/PazarRotas%C4%B1_Registration.jpeg)
+
+- **Sprint Review**: Tasarımlar hariç ürünün büyük bir kısmı planlandığı gibi tamamlandı. Pazar verileri eksiksiz ve doğru bir biçimde eklendi. Bir dahaki sprintte tasarımların hızlıca tamamlanıp ürün tesliminden önce uygulama testinin yapılmasına karar verildi.
+- 
+- **Sprint Retrospective:** Bayram nedeniyle sprint sürecinin ikinci haftası tam anlamıyla efektif geçirilemedi. Bazı takım üyelerinin teknik problemler yaşamasından dolayı meydana gelen aksaklıklar sebebiyle son sprint başında ilk olarak her üyenin teknik olarak hazır olmasının daha uygun olacağına karar verildi.
