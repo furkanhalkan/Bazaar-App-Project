@@ -66,6 +66,7 @@ Henüz ürün özellikleri geliştirme aşamasında...
 
 - **Sprint board update**:
 ![Sprint Backlog](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/Sprint2BoardUpdate.jpg)
+
 - **Ürün Durumu**:Ekran Görüntüleri:
 ![Screenshot 1](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/PazarRotasi_BazaarList.jpeg)
 ![Screenshot 2](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/PazarRotasi_Filter.jpeg)
@@ -73,5 +74,5 @@ Henüz ürün özellikleri geliştirme aşamasında...
 ![Screenshot 4](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/PazarRotasi_Registration.jpeg)
 
 - **Sprint Review**: Tasarımlar hariç ürünün büyük bir kısmı planlandığı gibi tamamlandı. Pazar verileri eksiksiz ve doğru bir biçimde eklendi. Bir dahaki sprintte tasarımların hızlıca tamamlanıp ürün tesliminden önce uygulama testinin yapılmasına karar verildi.
-- 
+  
 - **Sprint Retrospective:** Bayram nedeniyle sprint sürecinin ikinci haftası tam anlamıyla efektif geçirilemedi. Bazı takım üyelerinin teknik problemler yaşamasından dolayı meydana gelen aksaklıklar sebebiyle son sprint başında ilk olarak her üyenin teknik olarak hazır olmasının daha uygun olacağına karar verildi.
