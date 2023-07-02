@@ -67,10 +67,10 @@ Henüz ürün özellikleri geliştirme aşamasında...
 - **Sprint board update**:
 ![Sprint Backlog](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/Sprint2BoardUpdate.jpg)
 - **Ürün Durumu**:Ekran Görüntüleri:
-![Screenshot 1](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/PazarRotas%C4%B1_BazaarList.jpeg)
-![Screenshot 2](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/PazarRotas%C4%B1_Filter.jpeg)
-![Screenshot 3](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/PazarRotas%C4%B1_LoginPage.jpeg)
-![Screenshot 4](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/PazarRotas%C4%B1_Registration.jpeg)
+![Screenshot 1](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/PazarRotasi_BazaarList.jpeg)
+![Screenshot 2](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/PazarRotasi_Filter.jpeg)
+![Screenshot 3](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/PazarRotasi_LoginPage.jpeg)
+![Screenshot 4](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/PazarRotasi_Registration.jpeg)
 
 - **Sprint Review**: Tasarımlar hariç ürünün büyük bir kısmı planlandığı gibi tamamlandı. Pazar verileri eksiksiz ve doğru bir biçimde eklendi. Bir dahaki sprintte tasarımların hızlıca tamamlanıp ürün tesliminden önce uygulama testinin yapılmasına karar verildi.
 - 
