@@ -65,7 +65,7 @@ Henüz ürün özellikleri geliştirme aşamasında...
 [Daily Scrum 3](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/DailyScrum1.3Sprint2.jpg)
 
 - **Sprint board update**:
-
+![Sprint Backlog](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/Sprint2BoardUpdate.jpg)
 - **Ürün Durumu**:Ekran Görüntüleri:
 ![Screenshot 1](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/PazarRotas%C4%B1_BazaarList.jpeg)
 ![Screenshot 2](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/PazarRotas%C4%B1_Filter.jpeg)
