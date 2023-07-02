@@ -60,6 +60,9 @@ Henüz ürün özellikleri geliştirme aşamasında...
 - **Sprint içinde tamamlanması tahmin edilen puan**: 120
 
 - **Daily Scrum**: Ekibin daily scrum etkinlikleri bu sprint özelinde WhatsApp grubu üzerinden yürütülmüştür.
+[Daily Scrum](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/DailyScrum1.1Sprint2.jpg)
+[Daily Scrum 2](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/DailyScrum1.2Sprint2.jpg)
+[Daily Scrum 3](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/DailyScrum1.3Sprint2.jpg)
 
 - **Sprint board update**:
 
