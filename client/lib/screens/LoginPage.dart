@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 import '../widgets/RegisterPage.dart';
+import 'home_screen.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -56,19 +57,41 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Login'),
-      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              // Kullanıcı adı alanı
+              IconButton(
+                icon: Icon(Icons.arrow_back, color: Colors.black),
+                onPressed: () => Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => HomeScreen(
+                            title: 'Pazar Rotası',
+                          )), // HomeScreen sayfasını burada belirtin
+                ),
+              ),
+              SizedBox(height: 30),
+              Text(
+                'Hoş Geldiniz',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 60),
               TextFormField(
                 controller: _usernameController,
-                decoration: InputDecoration(labelText: 'Mail Adresi'),
+                decoration: InputDecoration(
+                  labelText: 'Mail Adresi',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Lütfen Mail Adresi Giriniz';
@@ -76,10 +99,15 @@ class _LoginPageState extends State<LoginPage> {
                   return null;
                 },
               ),
-              // Şifre alanı
+              SizedBox(height: 20),
               TextFormField(
                 controller: _passwordController,
-                decoration: InputDecoration(labelText: 'Şifre'),
+                decoration: InputDecoration(
+                  labelText: 'Şifre',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
                 obscureText: true,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -88,13 +116,26 @@ class _LoginPageState extends State<LoginPage> {
                   return null;
                 },
               ),
-              // Giriş düğmesi
+              SizedBox(height: 40),
               ElevatedButton(
                 onPressed: _login,
-                child: Text('Giriş Yap'),
+                child: Text(
+                  'Giriş Yap',
+                  style: TextStyle(fontSize: 18, color: Colors.white),
+                ),
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+                  primary: Colors.green,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
               ),
-              ElevatedButton(
-                child: Text('Kayıt Ol'),
+              TextButton(
+                child: Text(
+                  'Kayıt Ol',
+                  style: TextStyle(fontSize: 16, color: Colors.green),
+                ),
                 onPressed: () {
                   Navigator.push(
                     context,
