@@ -44,7 +44,6 @@ class _MarketDetailPageState extends State<MarketDetailPage> {
     String? token = prefs.getString('token');
 
     if (token != null) {
-      // Eğer kullanıcı giriş yapmamışsa, Giriş sayfasına yönlendir
       isLoggedIn = true;
     }
   }
@@ -76,7 +75,7 @@ class _MarketDetailPageState extends State<MarketDetailPage> {
         },
         body: jsonEncode(<String, String>{
           'pazar_id': widget.market.id,
-          'yorum_yapan_kisi': useradd!, // Add current user name here
+          'yorum_yapan_kisi': useradd!,
           'yorum': commentController.text,
         }),
       );
@@ -85,8 +84,6 @@ class _MarketDetailPageState extends State<MarketDetailPage> {
         commentController.text = '';
         _getComments();
       } else {
-        print(
-            'Server responded with status code ${response.statusCode} and body ${response.body}');
         throw Exception(
             'Server responded with status code ${response.statusCode} and body ${response.body}');
       }
@@ -98,67 +95,145 @@ class _MarketDetailPageState extends State<MarketDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text(widget.market.pazar_adi),
-        backgroundColor: Colors.green,
+        title: Text(
+          widget.market.pazar_adi,
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.green[600],
+        elevation: 0,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            widget.market.pazar_adi,
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(height: 16.0),
-          Text(
-            widget.market.description,
-            style: TextStyle(fontSize: 18),
-          ),
-          SizedBox(height: 16.0),
-          Text(
-            'Pazar Kuruluş Günü: ${widget.market.gunler}',
-            style: TextStyle(fontSize: 18),
-          ),
-          SizedBox(height: 32.0),
-          Expanded(
-            child: GoogleMap(
-              initialCameraPosition: CameraPosition(
-                target: LatLng(double.parse(widget.market.latitude),
-                    double.parse(widget.market.longitude)),
-                zoom: 14.0,
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: ListView(
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
+              decoration: BoxDecoration(
+                color: Colors.green[100],
+                borderRadius: BorderRadius.circular(20),
               ),
-              onMapCreated: (GoogleMapController controller) {
-                setState(() {
-                  _mapController = controller;
-                });
-              },
-              markers: _markers,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    widget.market.pazar_adi,
+                    style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.green[800]),
+                  ),
+                  SizedBox(height: 16.0),
+                  Text(
+                    widget.market.description,
+                    style: TextStyle(fontSize: 18, color: Colors.green[800]),
+                  ),
+                  SizedBox(height: 16.0),
+                  Text(
+                    'Pazar Kuruluş Günü: ${widget.market.gunler}',
+                    style: TextStyle(fontSize: 18, color: Colors.green[800]),
+                  ),
+                ],
+              ),
             ),
-          ),
-          SizedBox(height: 32.0),
-          Expanded(
-            child: ListView.builder(
+            SizedBox(height: 32.0),
+            Container(
+              height: 300,
+              child: Stack(
+                children: [
+                  GoogleMap(
+                    initialCameraPosition: CameraPosition(
+                      target: LatLng(double.parse(widget.market.latitude),
+                          double.parse(widget.market.longitude)),
+                      zoom: 14.0,
+                    ),
+                    onMapCreated: (GoogleMapController controller) {
+                      _mapController = controller;
+                    },
+                    markers: _markers,
+                  ),
+                  Positioned(
+                    top: 10.0,
+                    right: 10.0,
+                    child: FloatingActionButton(
+                      backgroundColor: Colors.green[600],
+                      child: Icon(Icons.location_pin),
+                      onPressed: () {
+                        // Zoom in to the location
+                        _mapController.animateCamera(
+                          CameraUpdate.newLatLngZoom(
+                            LatLng(double.parse(widget.market.latitude),
+                                double.parse(widget.market.longitude)),
+                            16.0,
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 32.0),
+            Text(
+              'Yorumlar',
+              style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.green[600]),
+            ),
+            SizedBox(height: 16.0),
+            ListView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               itemCount: comments.length,
               itemBuilder: (context, index) {
                 return ListTile(
-                  title: Text(comments[index]['user']['name_surname']),
+                  leading: CircleAvatar(
+                    child: Text(
+                      comments[index]['user']['name_surname'][0].toUpperCase(),
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    backgroundColor: Colors.green[600],
+                  ),
+                  title: Text(
+                    comments[index]['user']['name_surname'],
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
                   subtitle: Text(comments[index]['yorum']),
                 );
               },
             ),
-          ),
-          if (isLoggedIn)
-            TextField(
-              controller: commentController,
-              decoration: InputDecoration(
-                labelText: 'Yorum yaz',
-                suffixIcon: IconButton(
-                  onPressed: _postComment,
-                  icon: Icon(Icons.send),
+            SizedBox(height: 16.0),
+            if (isLoggedIn)
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.green[100],
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        controller: commentController,
+                        decoration: InputDecoration(
+                          labelText: 'Yorum yaz',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: _postComment,
+                      icon: Icon(Icons.send),
+                      color: Colors.green,
+                    ),
+                  ],
                 ),
               ),
-            ),
-        ],
+          ],
+        ),
       ),
     );
   }

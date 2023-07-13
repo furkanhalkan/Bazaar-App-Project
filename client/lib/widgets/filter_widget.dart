@@ -117,22 +117,27 @@ class _FilterPageState extends State<FilterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Filtreler'),
-        backgroundColor: Colors.green,
-      ),
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(
-                'Şehir',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          child: ListView(
+            children: <Widget>[
+              IconButton(
+                icon: Icon(Icons.arrow_back, color: Colors.black),
+                onPressed: () => Navigator.pop(context),
               ),
-              DropdownButton<String>(
+              SizedBox(height: 30),
+              Text(
+                'Pazar Filtreleri',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 60),
+              // Remaining widgets go here ...
+              DropdownButtonFormField<String>(
                 value: selectedCity,
                 onChanged: (String? newValue) {
                   setState(() {
@@ -148,13 +153,15 @@ class _FilterPageState extends State<FilterPage> {
                     child: Text(city),
                   );
                 }).toList(),
+                decoration: InputDecoration(
+                  labelText: 'Şehir',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
               ),
-              SizedBox(height: 16.0),
-              Text(
-                'İlçe',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              DropdownButton<String>(
+              SizedBox(height: 20),
+              DropdownButtonFormField<String>(
                 value: selectedDistrict,
                 onChanged: (String? newValue) {
                   setState(() {
@@ -167,13 +174,15 @@ class _FilterPageState extends State<FilterPage> {
                     child: Text(district),
                   );
                 }).toList(),
+                decoration: InputDecoration(
+                  labelText: 'İlçe',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
               ),
-              SizedBox(height: 16.0),
-              Text(
-                'Gün',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              DropdownButton<String>(
+              SizedBox(height: 20),
+              DropdownButtonFormField<String>(
                 value: selectedDay,
                 onChanged: (String? newValue) {
                   setState(() {
@@ -186,15 +195,27 @@ class _FilterPageState extends State<FilterPage> {
                     child: Text(day),
                   );
                 }).toList(),
+                decoration: InputDecoration(
+                  labelText: 'Gün',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
               ),
-              SizedBox(height: 32.0),
+              SizedBox(height: 40),
               ElevatedButton(
                 onPressed: applyFilters,
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.green,
-                  onPrimary: Colors.white,
+                child: Text(
+                  'Pazar Bul',
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
-                child: Text('Pazar Bul'),
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+                  primary: Colors.green,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
               ),
             ],
           ),

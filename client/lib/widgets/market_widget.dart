@@ -21,6 +21,22 @@ class MarketWidget extends StatelessWidget {
     }
   }
 
+  // Market günlerine göre rengi belirlemek için bir method
+  Color getColorBasedOnMarketDay(String day) {
+    Map<String, Color> dayColors = {
+      'Pazartesi': Colors.blue,
+      'Salı': Colors.green,
+      'Çarşamba': Colors.yellow,
+      'Perşembe': Colors.orange,
+      'Cuma': Colors.red,
+      'Cumartesi': Colors.purple,
+      'Pazar': Colors.brown,
+    };
+
+    // Eğer map'te belirtilen bir gün yoksa varsayılan renk olarak siyahı kullan
+    return dayColors[day] ?? Colors.black;
+  }
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<Market>>(
@@ -55,63 +71,82 @@ class MarketWidget extends StatelessWidget {
                         ),
                       ],
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            height: 10,
-                            color: ProjectColors.cartColor,
-                          ),
-                          Expanded(
-                            child: Container(
-                              color: ProjectColors.cartColor,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    market.pazar_adi,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyMedium
-                                        ?.copyWith(
-                                          fontSize: 16,
+                    child: Row(
+                      // Row widget'ını düzenliyoruz
+                      mainAxisAlignment: MainAxisAlignment
+                          .spaceBetween, // Başlangıç ve son elemanlar arasında maksimum boşluk
+                      children: [
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  height: 10,
+                                  color: ProjectColors.cartColor,
+                                ),
+                                Expanded(
+                                  child: Container(
+                                    color: ProjectColors.cartColor,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          market.pazar_adi,
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyMedium
+                                              ?.copyWith(
+                                                fontSize: 16,
+                                              ),
                                         ),
-                                  ),
-                                  SizedBox(height: 8),
-                                  Text(
-                                    market.description,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyMedium
-                                        ?.copyWith(fontSize: 11),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Container(
-                            width: context.sized.dynamicWidth(0.4),
-                            height: 20,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: Colors.blue,
-                            ),
-                            child: Center(
-                              child: Text(
-                                market.gunler,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium
-                                    ?.copyWith(
-                                      fontSize: 16,
+                                        SizedBox(height: 8),
+                                        Text(
+                                          market.description,
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyMedium
+                                              ?.copyWith(fontSize: 11),
+                                        ),
+                                      ],
                                     ),
-                              ),
+                                  ),
+                                ),
+                                Container(
+                                  width: context.sized.dynamicWidth(0.4),
+                                  height: 20,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    color:
+                                        getColorBasedOnMarketDay(market.gunler),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      market.gunler,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium
+                                          ?.copyWith(
+                                              fontSize: 16,
+                                              color: Colors.white),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                        CircleAvatar(
+                          // CircleAvatar widget'ını sona ekliyoruz
+                          child: Icon(Icons.chevron_right, color: Colors.white),
+                          backgroundColor: Colors.green,
+                        ),
+                        SizedBox(
+                            width:
+                                8), // Icon ve sağ kenar arasında boşluk ekliyoruz
+                      ],
                     ),
                   ),
                 ),

@@ -56,24 +56,70 @@ class _ProfileWidgetState extends State<ProfileWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: <Widget>[
-        ListTile(
-          title: Text('Ad Soyad: ${profile?.name ?? ''}'),
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: SingleChildScrollView(
+          // This is new
+          child: profile == null
+              ? CircularProgressIndicator()
+              : Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    CircleAvatar(
+                      radius: 70,
+                      child: ClipOval(
+                        child: Icon(
+                          Icons.account_circle,
+                          size: 120,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 30),
+                    Text(
+                      'Profil Bilgileri',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 60),
+                    Card(
+                      child: ListTile(
+                        title: Text('Ad Soyad: ${profile?.name ?? ''}'),
+                      ),
+                    ),
+                    Card(
+                      child: ListTile(
+                        title: Text('E-Mail: ${profile?.email ?? ''}'),
+                      ),
+                    ),
+                    Card(
+                      child: ListTile(
+                        title: Text('Telefon: ${profile?.phone ?? ''}'),
+                      ),
+                    ),
+                    SizedBox(height: 40),
+                    ElevatedButton(
+                      onPressed: logout,
+                      child: Text(
+                        'Çıkış Yap',
+                        style: TextStyle(fontSize: 18, color: Colors.white),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+                        primary: Colors.red,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
         ),
-        ListTile(
-          title: Text('E-Mail: ${profile?.email ?? ''}'),
-        ),
-        ListTile(
-          title: Text('Telefon: ${profile?.phone ?? ''}'),
-        ),
-        ListTile(
-          title: ElevatedButton(
-            child: Text('Çıkış Yap'),
-            onPressed: logout,
-          ),
-        ),
-      ],
+      ),
     );
   }
 }

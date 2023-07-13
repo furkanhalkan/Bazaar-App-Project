@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import '../screens/LoginPage.dart';
+
 class RegisterPage extends StatefulWidget {
   @override
   _RegisterPageState createState() => _RegisterPageState();
@@ -26,8 +28,7 @@ class _RegisterPageState extends State<RegisterPage> {
   Future<void> _register() async {
     if (_formKey.currentState!.validate()) {
       final response = await http.post(
-        Uri.parse(
-            'http://192.168.56.1:3000/api/auth/register'), // your-api-url kısmını kendi Express API urliniz ile değiştirin.
+        Uri.parse('http://192.168.56.1:3000/api/auth/register'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
@@ -56,71 +57,112 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Kayıt Ol"),
-      ),
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Form(
-            key: _formKey,
-            child: ListView(
-              children: <Widget>[
-                TextFormField(
-                  controller: _emailController,
-                  decoration: InputDecoration(
-                    labelText: 'E-Mail',
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              IconButton(
+                icon: Icon(Icons.arrow_back, color: Colors.black),
+                onPressed: () => Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LoginPage(),
                   ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Lütfen e-mail giriniz';
-                    }
-                    return null;
-                  },
                 ),
-                TextFormField(
-                  controller: _passwordController,
-                  decoration: InputDecoration(
-                    labelText: 'Parola',
+              ),
+              SizedBox(height: 30),
+              Text(
+                'Kayıt Ol',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 60),
+              TextFormField(
+                controller: _nameSurnameController,
+                decoration: InputDecoration(
+                  labelText: 'Ad Soyad',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
                   ),
-                  obscureText: true,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Lütfen parola giriniz';
-                    }
-                    return null;
-                  },
                 ),
-                TextFormField(
-                  controller: _phoneController,
-                  decoration: InputDecoration(
-                    labelText: 'Telefon',
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Lütfen adınızı ve soyadınızı giriniz';
+                  }
+                  return null;
+                },
+              ),
+              SizedBox(height: 20),
+              TextFormField(
+                controller: _emailController,
+                decoration: InputDecoration(
+                  labelText: 'E-Mail',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
                   ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Lütfen telefon numarası giriniz';
-                    }
-                    return null;
-                  },
                 ),
-                TextFormField(
-                  controller: _nameSurnameController,
-                  decoration: InputDecoration(
-                    labelText: 'Ad Soyad',
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Lütfen e-mail giriniz';
+                  }
+                  return null;
+                },
+              ),
+              SizedBox(height: 20),
+              TextFormField(
+                controller: _phoneController,
+                decoration: InputDecoration(
+                  labelText: 'Telefon',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
                   ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Lütfen adınızı ve soyadınızı giriniz';
-                    }
-                    return null;
-                  },
                 ),
-                ElevatedButton(
-                  child: Text('Kayıt Ol'),
-                  onPressed: _register,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Lütfen telefon numarası giriniz';
+                  }
+                  return null;
+                },
+              ),
+              SizedBox(height: 20),
+              TextFormField(
+                controller: _passwordController,
+                obscureText: true,
+                decoration: InputDecoration(
+                  labelText: 'Parola',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
                 ),
-              ],
-            ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Lütfen parola giriniz';
+                  }
+                  return null;
+                },
+              ),
+              SizedBox(height: 40),
+              ElevatedButton(
+                onPressed: _register,
+                child: Text(
+                  'Kayıt Ol',
+                  style: TextStyle(fontSize: 18, color: Colors.white),
+                ),
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+                  primary: Colors.green,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
