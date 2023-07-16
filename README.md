@@ -82,11 +82,11 @@ Henüz ürün özellikleri geliştirme aşamasında...
 - **Sprint içinde tamamlanması tahmin edilen puan**: 120
 
 - **Daily Scrum**: Ekibin daily scrum etkinlikleri bu sprint özelinde WhatsApp grubu üzerinden yürütülmüştür.
-[Daily Scrum](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/DailyScrum1.1Sprint2.jpg)
+[Daily Scrum](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/LastDailyScrum2.jpg)
 
 
 - **Sprint board update**:
-![Sprint Backlog](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/Sprint2BoardUpdate.jpg)
+![Sprint Backlog](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/Sprint3BoardUpdate.jpg)
 
 - **Ürün Durumu**:Ekran Görüntüleri:
 ![Screenshot 1](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/NewFilter.jpeg))
@@ -95,8 +95,9 @@ Henüz ürün özellikleri geliştirme aşamasında...
 ![Screenshot 4](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/SampleMap.jpeg)
 ![Screenshot 5](https://github.com/nurglnal/Bazaar-App-Project/blob/main/ProjectManagement/BazaarsScreen.jpeg)
 
-- **Sprint Review**: 
-- **Sprint Retrospective:** 
+- **Sprint Review**: Takım üyelerinin bu sprint süresince çok fazla müsait vakti olmadığından sprint backlogda değişiklikler yapılmak zorunda kaldı ama sprint sonunda hedeflere ulaşıldı. 3 sprint sonunda ürünün hedef kullanıcılarının tanımlanmış problemine çözüm olmasını sağlayan tüm özellikler eklenmiş oldu.
+  
+- **Sprint Retrospective:** Takım üyelerinin sınırlı vaktine rağmen takım güzel bir uyum içerisinde 3 haftalık Bootcamp süresinde güzel bir ekip ruhu ortaya koyduğu için memnun. 
   
 
   
