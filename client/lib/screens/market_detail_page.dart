@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
@@ -50,7 +51,7 @@ class _MarketDetailPageState extends State<MarketDetailPage> {
 
   Future<void> _getComments() async {
     var response = await http.get(Uri.parse(
-        'http://192.168.56.1:3000/api/pazar/yorumlar/${widget.market.id}'));
+        '${dotenv.env['API_URL']}/api/pazar/yorumlar/${widget.market.id}'));
     if (response.statusCode == 200) {
       setState(() {
         comments = jsonDecode(response.body);
@@ -68,7 +69,7 @@ class _MarketDetailPageState extends State<MarketDetailPage> {
       String? useradd = prefs.getString('user_id');
 
       var response = await http.post(
-        Uri.parse('http://192.168.56.1:3000/api/pazar/yorumlar/register'),
+        Uri.parse('${dotenv.env['API_URL']}/api/pazar/yorumlar/register'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
           'Authorization': 'Bearer $token',

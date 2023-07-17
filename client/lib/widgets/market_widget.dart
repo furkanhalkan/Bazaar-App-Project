@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:pazar_rotasi/constants/project_color.dart';
 import '../screens/market_detail_page.dart';
@@ -11,7 +12,7 @@ import 'package:kartal/kartal.dart';
 class MarketWidget extends StatelessWidget {
   Future<List<Market>> fetchMarkets() async {
     final response =
-        await http.get(Uri.parse('http://192.168.56.1:3000/api/pazar/pazars'));
+        await http.get(Uri.parse('${dotenv.env['API_URL']}/api/pazar/pazars'));
 
     if (response.statusCode == 200) {
       List jsonResponse = json.decode(response.body);

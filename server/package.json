@@ -1,4 +1,8 @@
 {
+  "scripts":{
+    "start":"npx ts-node index.ts",
+    "start:migrate": "npx prisma db push --accept-data-loss && npm run start"
+  },
   "devDependencies": {
     "@types/node": "^20.3.1",
     "@types/uuid": "^9.0.2",

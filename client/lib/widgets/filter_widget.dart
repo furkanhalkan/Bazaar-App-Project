@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
@@ -60,7 +61,7 @@ class _FilterPageState extends State<FilterPage> {
 
   Future<void> fetchCities() async {
     final response = await http.get(Uri.parse(
-        'http://192.168.56.1:3000/api/pazar/iller')); // Replace with the actual API endpoint for cities
+        '${dotenv.env['API_URL']}/api/pazar/iller')); // Replace with the actual API endpoint for cities
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
       if (data is List) {
@@ -80,7 +81,7 @@ class _FilterPageState extends State<FilterPage> {
 
   Future<void> fetchDistricts(String city) async {
     final response = await http.get(Uri.parse(
-        'http://192.168.56.1:3000/api/pazar/ilceler/$city')); // Replace with the actual API endpoint for districts
+        '${dotenv.env['API_URL']}/api/pazar/ilceler/$city')); // Replace with the actual API endpoint for districts
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
       if (data is List) {
@@ -100,7 +101,7 @@ class _FilterPageState extends State<FilterPage> {
 
   Future<void> fetchMarkets() async {
     final response =
-        await http.get(Uri.parse('http://192.168.56.1:3000/api/pazar/pazars'));
+        await http.get(Uri.parse('${dotenv.env['API_URL']}/api/pazar/pazars'));
 
     if (response.statusCode == 200) {
       List jsonResponse = json.decode(response.body);
