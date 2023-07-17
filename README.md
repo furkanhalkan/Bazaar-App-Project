@@ -23,7 +23,7 @@ Pazar Rotası, şehre yeni taşınan insanların, turistlerin ve organik ürün 
 
 ## Ürün Özellikleri
 
-Henüz ürün özellikleri geliştirme aşamasında...
+Kullanıcılarımız mail adresleri, isim soyisim ve şifreleriyle uygulamaya kaydolabilirler. Şehir, ilçe ve pazarın açık olduğu güne göre filtreleme yaparak istedikleri bölgelerdeki pazarları sayfalarında listeyebilirler. Uygulamamıza ekli olan Google Maps eklentisi sayesinde aradıkları pazar hakkında daha detaylı lokasyon bilgisine ulaşabilirler. Ayrıca uygulamaya kayıt olan kullanıcılar pazarlar hakkında yorum ekleyerek daha sonraki kullanıcıların uygulamayı daha verimli kullanmalarına yardımcı olabilirler. Uygulamaya kayıt olmayanlar sadece pazar yerlerini görüntüleyebilmektedir.
 
 ## Hedef Kitle
 
