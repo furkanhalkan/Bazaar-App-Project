@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -30,7 +31,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
     String? token = prefs.getString('token');
     String? user_id = prefs.getString('user_id');
     final response = await http.get(
-      Uri.parse('http://192.168.56.1:3000/api/profil/profile/$user_id'),
+      Uri.parse('${dotenv.env['API_URL']}/api/profil/profile/$user_id'),
       headers: {
         'Authorization': 'Bearer $token',
       },

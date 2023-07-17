@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'cf_oua'
+      MYSQL_USER: 'acedia'
+      MYSQL_PASSWORD: '167349852'
+      MYSQL_ROOT_PASSWORD: '167349852@'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - my-db:/var/lib/mysql
+  app:
+    build: .
+    image: pazar_rotasi_server
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: 'mysql://acedia:167349852@db:3306/cf_oua'
+      SECRET_KEY: '123456789'
+      GOOGLE_API: 'AIzaSyDdXd5S7EXSBIuKF5j3EXdLxARlCPKzb5A'
+volumes:
+  my-db:

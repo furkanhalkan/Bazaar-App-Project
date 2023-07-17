@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -27,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
     if (_formKey.currentState!.validate()) {
       final response = await http.post(
         Uri.parse(
-            'http://192.168.56.1:3000/api/auth/login'), // your-api-url kısmını kendi Express API urliniz ile değiştirin.
+            '${dotenv.env['API_URL']}/api/auth/login'), // your-api-url kısmını kendi Express API urliniz ile değiştirin.
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },

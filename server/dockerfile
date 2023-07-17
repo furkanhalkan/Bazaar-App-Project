@@ -1,0 +1,29 @@
+# Node.js tabanlı bir resmi Docker image kullanın
+FROM node:16
+
+# Çalışma dizini olarak /app'i ayarlayın
+WORKDIR /app
+
+# package.json ve package-lock.json dosyalarını /app içine kopyalayın
+COPY package*.json ./
+
+# Projedeki tüm npm bağımlılıklarını yükleyin
+RUN npm install
+
+# Projeyi /app içine kopyalayın
+COPY . .
+
+# Docker içinde bağlantı dizesini düzeltme
+ENV DATABASE_URL=mysql://acedia:167349852@db:3306/cf_oua
+ENV SECRET_KEY=167349852
+ENV GOOGLE_API=AIzaSyDdXd5S7EXSBIuKF5j3EXdLxARlCPKzb5A
+
+# Prisma Client'ı oluşturun
+RUN npx prisma generate
+
+
+# 3000 portunu açın (api'niz hangi portta çalışıyorsa o portu kullanın)
+EXPOSE 3000
+
+# Uygulamanın başlatılması için komut verin
+CMD [  "npm", "run", "start:migrate" ]
